@@ -349,3 +349,14 @@ body {
         background-color: white;
     }
 }
+@media screen and (min-width: 1700px) {
+    .first_Section__diamonds__diamond:first-child {
+        top: var(--size-base);
+        left: var(--size-9xl);
+    }
+    
+    .first_Section__diamonds__diamond:last-child {
+        top: var(--size-8xl);
+        left: var(--size-2xl);
+    }
+}
