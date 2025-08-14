@@ -88,7 +88,7 @@
     --diamond-container-height-desktop: 300px;
     
     /* Rozmiary diamentów */
-    --diamond-size-mobile: 70px;
+    --diamond-size-mobile: 90px;
     --diamond-size-tablet: 120px;
     --diamond-size-desktop: 100px;
     
@@ -218,8 +218,8 @@ body {
 }
 
 .first_Section__diamonds__diamond:last-child {
-    bottom: var(--size-2xl);
-    left: var(--size-xl);
+    bottom: var(--size-sm);
+    right: var(--size-6xl);
 }
 
 .first_Section__elements {
