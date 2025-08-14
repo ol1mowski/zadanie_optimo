@@ -135,7 +135,15 @@ body {
     border: var(--border);
     position: absolute;
     transition: all var(--transition-normal);
-    will-change: transform;
+    will-change: transform, box-shadow;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0) rotate(45deg);
+}
+
+.first_Section__diamonds__diamond:hover {
+    transform: translateZ(0) rotate(45deg) scale(1.1);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
 }
 
 .first_Section__diamonds__diamond:first-child {
@@ -167,7 +175,15 @@ body {
     background-color: var(--color-accent-blue);
     border: var(--border);
     transition: all var(--transition-normal);
-    will-change: transform;
+    will-change: transform, background-color;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.first_Section__elements__lines__line:hover {
+    transform: translateZ(0) scaleX(1.1);
+    background-color: #4169E1;
 }
 
 .first_Section__elements__circle {
@@ -177,7 +193,15 @@ body {
     border-radius: var(--border-radius-full);
     border: var(--border);
     transition: all var(--transition-normal);
-    will-change: transform;
+    will-change: transform, box-shadow;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.first_Section__elements__circle:hover {
+    transform: translateZ(0) scale(1.1);
+    box-shadow: 0 4px 15px rgba(1, 128, 129, 0.3);
 }
 
 .second_Section {
@@ -195,12 +219,28 @@ body {
     justify-content: center;
     padding-top: clamp(20px, 2vh, 40px);
     transition: all var(--transition-normal);
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.second_Section__rectangle:hover {
+    transform: translateZ(0) scale(1.02);
+    box-shadow: 0 6px 20px rgba(1, 1, 255, 0.2);
 }
 
 .second_Section__rectangle__text {
     color: var(--color-text-primary);
     font-size: clamp(24px, 3vw, 48px);
     font-weight: bold;
+    transition: color var(--transition-normal);
+    cursor: pointer;
+    will-change: color;
+}
+
+.second_Section__rectangle__text:hover {
+    color: var(--color-accent-red);
 }
 
 
@@ -359,4 +399,19 @@ body {
         top: var(--size-8xl);
         left: var(--size-2xl);
     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container__content > * {
+    animation: fadeIn 0.6s ease-out;
 }
