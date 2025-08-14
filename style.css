@@ -107,7 +107,7 @@
     
     /* Rozmiary prostokąta */
     --rectangle-width-mobile: 150px;
-    --rectangle-height-mobile: 300px;
+    --rectangle-height-mobile: 100px;
     --rectangle-width-tablet: 100%;
     --rectangle-height-tablet: 100%;
     --rectangle-width-desktop: 100%;
@@ -124,8 +124,8 @@
     
     /* Wysokości viewport */
     --height-tablet: 80vh;
-    --min-height-rectangle-tablet: 400px;
-    --min-height-rectangle-desktop: 500px;
+    --min-height-rectangle-tablet: 250px;
+    --min-height-rectangle-desktop: 250px;
     --max-width-rectangle-desktop: 280px;
 }
 
@@ -151,31 +151,33 @@ body {
     overflow-x: hidden;
 }
 
-
-
 .container {
     width: 100%;
-    min-height: 100vh;
+    height: 90vh;
+    max-height: 90vh;
     background-color: var(--color-primary);
     border: var(--border);
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .container__header {
     width: 100%;
-    height: var(--size-2xl);
+    height: 8vh;
     background-color: var(--color-secondary);
     border-bottom: var(--border);
+    flex-shrink: 0;
 }
 
 .container__content {
     flex: 1;
     padding: var(--spacing-xl);
     display: flex;
+    height: calc(90vh - 8vh);
     flex-direction: column;
     gap: var(--spacing-xl);
+    overflow: hidden;
 }
 
 .first_Section {
@@ -271,11 +273,14 @@ body {
 .second_Section {
     display: flex;
     justify-content: center;
+    height: 100%;
+    min-height: 0;
 }
 
 .second_Section__rectangle {
     width: clamp(var(--rectangle-width-mobile), 20vw, 400px);
-    height: clamp(var(--rectangle-height-mobile), 40vh, 600px);
+    height: 100%;
+    max-height: calc(90vh - 8vh - 4vh);
     background-color: var(--color-accent-light-blue);
     border: var(--border);
     display: flex;
@@ -287,6 +292,7 @@ body {
     will-change: transform, box-shadow;
     backface-visibility: hidden;
     transform: translateZ(0);
+    overflow: hidden;
 }
 
 .second_Section__rectangle:hover {
@@ -313,6 +319,8 @@ body {
         flex-direction: row;
         gap: var(--spacing-2xl);
         align-items: flex-start;
+        height: calc(90vh - 8vh);
+        overflow: hidden;
     }
     
     .first_Section {
@@ -386,6 +394,8 @@ body {
         gap: var(--spacing-2xl);
         align-items: flex-start;
         padding-right: var(--spacing-lg);
+        height: calc(90vh - 8vh);
+        overflow: hidden;
     }
     
     .first_Section {
